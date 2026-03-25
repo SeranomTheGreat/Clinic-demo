@@ -5,17 +5,17 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   
-  --color-primary: #1A1A1A;
-  --color-secondary: #C5A880;
-  --color-accent: #F9F6F0;
+  --color-primary: #0284c7;
+  --color-secondary: #0ea5e9;
+  --color-accent: #f0f9ff;
   --color-surface: #FFFFFF;
-  --color-muted: #8E8E8E;
+  --color-muted: #94a3b8;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-accent);
-  color: var(--color-primary);
+  background-color: var(--color-surface);
+  color: #111827;
   -webkit-font-smoothing: antialiased;
 }
 

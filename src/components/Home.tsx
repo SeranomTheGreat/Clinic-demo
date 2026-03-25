@@ -5,7 +5,7 @@ import Hero from './Hero';
 
 export default function Home() {
   return (
-    <div className="bg-[#F9F6F0]">
+    <div className="bg-blue-50">
       <Hero />
 
       {/* Welcome Section */}
@@ -17,31 +17,31 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#C5A880] text-sm uppercase tracking-widest font-semibold block mb-4">
+            <span className="text-blue-600 text-sm uppercase tracking-widest font-semibold block mb-4">
               Welcome Home
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight text-primary">
+            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight text-gray-900">
               A Sanctuary for Your Well-being
             </h2>
             <p className="text-gray-600 font-light text-lg md:text-xl leading-relaxed mb-10">
-              Step into Lumière, where every detail is designed with your comfort and peace of mind at heart. We believe that aesthetic care and wellness should be a deeply relaxing, empowering experience. From the moment you walk through our doors, you are family.
+              Step into our clinic, where every detail is designed with your comfort and peace of mind at heart. We believe that medical care and wellness should be a deeply reassuring, empowering experience. From the moment you walk through our doors, you are family.
             </p>
             <img 
               src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2670&auto=format&fit=crop" 
               alt="Welcoming Clinic Environment" 
-              className="w-full h-auto aspect-[21/9] object-cover rounded-sm shadow-sm"
+              className="w-full h-auto aspect-[21/9] object-cover rounded-xl shadow-md"
               referrerPolicy="no-referrer"
             />
           </motion.div>
         </div>
       </section>
 
-      {/* The Lumière Experience */}
-      <section className="py-24 bg-[#F9F6F0]">
+      {/* The Clinic Experience */}
+      <section className="py-24 bg-blue-50">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif mb-6 text-primary">The Lumière Experience</h2>
-            <div className="w-24 h-px bg-[#C5A880] mx-auto"></div>
+            <h2 className="text-3xl md:text-4xl font-serif mb-6 text-gray-900">The Clinic Experience</h2>
+            <div className="w-24 h-px bg-blue-600 mx-auto"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -59,7 +59,7 @@ export default function Home() {
               {
                 icon: <Sparkles size={32} />,
                 title: "Luxurious Comfort",
-                desc: "Enjoy a serene, spa-like environment that melts away stress and allows you to focus purely on your rejuvenation."
+                desc: "Enjoy a serene, clean environment that melts away stress and allows you to focus purely on your health."
               }
             ].map((feature, i) => (
               <motion.div 
@@ -68,12 +68,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white p-10 text-center shadow-sm hover:shadow-md transition-shadow rounded-xl border border-blue-100"
               >
-                <div className="w-16 h-16 mx-auto bg-[#F9F6F0] rounded-full flex items-center justify-center mb-6 text-[#C5A880]">
+                <div className="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 text-blue-600">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-serif mb-4 text-primary">{feature.title}</h3>
+                <h3 className="text-xl font-serif mb-4 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600 font-light leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
@@ -98,7 +98,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Link to={link.href} className="group block relative overflow-hidden aspect-square">
+                <Link to={link.href} className="group block relative overflow-hidden aspect-square rounded-xl shadow-sm">
                   <img 
                     src={link.img} 
                     alt={link.title} 
@@ -107,7 +107,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-500 flex flex-col items-center justify-center text-white p-6 text-center">
                     <h3 className="text-2xl font-serif mb-3">{link.title}</h3>
-                    <div className="flex items-center text-sm uppercase tracking-widest font-medium text-[#C5A880] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <div className="flex items-center text-sm uppercase tracking-widest font-medium text-blue-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                       <span className="mr-2">Explore</span>
                       <ArrowRight size={16} />
                     </div>

@@ -4,7 +4,7 @@ import { MoveHorizontal } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHeader from './PageHeader';
 
-export default function BeforeAfter({ isHome = false }: { isHome?: boolean }) {
+export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,22 +44,20 @@ export default function BeforeAfter({ isHome = false }: { isHome?: boolean }) {
 
   return (
     <div className="bg-white">
-      {!isHome && (
-        <PageHeader 
-          title="Real Results" 
-          subtitle="Transformations" 
-          image="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2670&auto=format&fit=crop" 
-        />
-      )}
+      <PageHeader 
+        title="Real Results" 
+        subtitle="Transformations" 
+        image="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2670&auto=format&fit=crop" 
+      />
 
-      <section className="py-24 bg-[#1A1A1A] text-white">
+      <section className="py-24 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
-            <span className="text-[#C5A880] text-sm uppercase tracking-widest font-semibold">Transformations</span>
+            <span className="text-blue-400 text-sm uppercase tracking-widest font-semibold">Transformations</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-4 mb-6">Before & After</h2>
-            <div className="w-24 h-px bg-[#C5A880] mx-auto mb-6"></div>
+            <div className="w-24 h-px bg-blue-500 mx-auto mb-6"></div>
             <p className="text-gray-400 font-light max-w-2xl mx-auto">
-              Drag the slider to see the remarkable results of our signature facial rejuvenation treatment.
+              Drag the slider to see the remarkable results of our signature treatments.
             </p>
           </div>
 
@@ -68,7 +66,7 @@ export default function BeforeAfter({ isHome = false }: { isHome?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative max-w-4xl mx-auto aspect-[4/3] md:aspect-[16/9] overflow-hidden select-none"
+            className="relative max-w-4xl mx-auto aspect-[4/3] md:aspect-[16/9] overflow-hidden select-none rounded-2xl shadow-2xl border border-gray-800"
             ref={containerRef}
             onMouseDown={(e) => {
               setIsDragging(true);
@@ -87,7 +85,7 @@ export default function BeforeAfter({ isHome = false }: { isHome?: boolean }) {
               referrerPolicy="no-referrer"
               draggable="false"
             />
-            <div className="absolute top-6 right-6 bg-black/50 backdrop-blur-sm px-4 py-2 text-sm uppercase tracking-widest z-10">
+            <div className="absolute top-6 right-6 bg-black/50 backdrop-blur-sm px-4 py-2 text-sm uppercase tracking-widest z-10 rounded-md font-semibold">
               After
             </div>
 
@@ -103,7 +101,7 @@ export default function BeforeAfter({ isHome = false }: { isHome?: boolean }) {
                 referrerPolicy="no-referrer"
                 draggable="false"
               />
-              <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-sm px-4 py-2 text-sm uppercase tracking-widest z-10">
+              <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-sm px-4 py-2 text-sm uppercase tracking-widest z-10 rounded-md font-semibold">
                 Before
               </div>
             </div>
@@ -113,7 +111,7 @@ export default function BeforeAfter({ isHome = false }: { isHome?: boolean }) {
               className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20"
               style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-blue-600 border-2 border-gray-100">
                 <MoveHorizontal size={24} />
               </div>
             </div>
@@ -121,22 +119,20 @@ export default function BeforeAfter({ isHome = false }: { isHome?: boolean }) {
         </div>
       </section>
 
-      {!isHome && (
-        <section className="py-24 bg-[#F9F6F0]">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-serif mb-6">Ready for your own transformation?</h2>
-            <p className="text-gray-600 font-light mb-10 text-lg">
-              Discover what's possible with a personalized treatment plan.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block px-8 py-4 bg-primary text-white hover:bg-[#C5A880] transition-colors text-sm uppercase tracking-widest"
-            >
-              Book a Consultation
-            </Link>
-          </div>
-        </section>
-      )}
+      <section className="py-24 bg-blue-50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-serif mb-6 text-gray-900">Ready for your own transformation?</h2>
+          <p className="text-gray-600 font-light mb-10 text-lg">
+            Discover what's possible with a personalized treatment plan.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block px-8 py-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm uppercase tracking-widest font-bold shadow-md hover:shadow-lg"
+          >
+            Book a Consultation
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const navBgClass = isScrolled 
-    ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm text-[#1A1A1A]' 
+    ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm text-gray-900' 
     : 'bg-transparent py-6 text-white';
 
   const navLinks = [
@@ -34,8 +34,9 @@ export default function Navbar() {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${navBgClass}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-serif font-semibold tracking-wider">
-          LUMIÈRE
+        <Link to="/" className="text-2xl font-serif font-bold tracking-wider flex items-center gap-2">
+          <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg">V</div>
+          VITALITY
         </Link>
 
         {/* Desktop Nav */}
@@ -44,17 +45,17 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm uppercase tracking-widest hover:text-[#C5A880] transition-colors"
+              className="text-sm uppercase tracking-widest hover:text-blue-600 font-medium transition-colors"
             >
               {link.name}
             </Link>
           ))}
           <Link
             to="/contact"
-            className={`px-6 py-2 border transition-colors text-sm uppercase tracking-widest ${
+            className={`px-6 py-2 border rounded-md transition-colors text-sm uppercase tracking-widest font-bold ${
               isScrolled 
-                ? 'border-primary hover:bg-primary hover:text-white' 
-                : 'border-white hover:bg-white hover:text-primary'
+                ? 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700 hover:border-blue-700 shadow-sm' 
+                : 'border-white bg-white text-blue-900 hover:bg-gray-100'
             }`}
           >
             Book Now
@@ -75,14 +76,14 @@ export default function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 w-full bg-white shadow-lg py-6 px-6 flex flex-col space-y-4 md:hidden text-[#1A1A1A]"
+          className="absolute top-full left-0 w-full bg-white shadow-lg py-6 px-6 flex flex-col space-y-4 md:hidden text-gray-900"
         >
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-sm uppercase tracking-widest hover:text-[#C5A880] transition-colors"
+              className="text-sm uppercase tracking-widest hover:text-blue-600 font-medium transition-colors"
             >
               {link.name}
             </Link>
@@ -90,7 +91,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="px-6 py-3 bg-primary text-white text-center text-sm uppercase tracking-widest"
+            className="px-6 py-3 bg-blue-600 text-white text-center rounded-md text-sm uppercase tracking-widest font-bold shadow-sm"
           >
             Book Now
           </Link>

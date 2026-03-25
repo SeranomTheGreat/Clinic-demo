@@ -10,7 +10,7 @@ export default function PageHeader({ title, subtitle, image }: PageHeaderProps) 
   return (
     <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-blue-900/60 z-10" />
         <img 
           src={image} 
           alt={title} 
@@ -23,7 +23,7 @@ export default function PageHeader({ title, subtitle, image }: PageHeaderProps) 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.6 }} 
-          className="block text-sm uppercase tracking-[0.2em] mb-4 text-[#C5A880]"
+          className="block text-sm uppercase tracking-[0.2em] mb-4 text-blue-300 font-semibold"
         >
           {subtitle}
         </motion.span>
